@@ -6,13 +6,13 @@ For now the code will stay hidden until it is at its released state.
 
 
 ## Planned Features:
-Z1: Drag & Dropping onto dungeon maps
-Z3: Dungeon Counters
-Mousing over Icons give info (Check/Entrance name, Full Dungeon info)
+- Z1: Drag & Dropping onto dungeon maps
+- Z3: Dungeon Counters
+- Mousing over Icons give info (Check/Entrance name, Full Dungeon info)
 
 ## Potential Features:
-M1 & SM: Logic for all checks
-Z1 & Z3: Logic for Non ER checks
+- M1 & SM: Logic for all checks
+- Z1 & Z3: Logic for Non ER checks
 
 ## Eventuals if Quad Rando includes them:
 Z1 Dungeon Room Rando or whatever its called auto map making
