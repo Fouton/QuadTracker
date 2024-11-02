@@ -15,10 +15,10 @@ For now the code will stay hidden until it is at its released state.
 - Z1 & Z3: Logic for Non ER checks
 
 ## Eventuals if Quad Rando includes them:
-Z1 Dungeon Room Rando or whatever its called auto map making
-Z3 Door Rando (The Nothing Yet tab) & Region Hint Counters
-SM Map Rando map maker (probably needs autotracking to be possible)
-All Boss Prize Shuffling (already built into Z3/SM)
+- Z1 Dungeon Room Rando or whatever its called auto map making
+- Z3 Door Rando (The Nothing Yet tab) & Region Hint Counters
+- SM Map Rando map maker (probably needs autotracking to be possible)
+- All Boss Prize Shuffling (already built into Z3/SM)
 
 ## Autotracking (Eventually) plans:
 
