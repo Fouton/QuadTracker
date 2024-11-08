@@ -9,6 +9,7 @@ For now the code will stay hidden until it is at its released state.
 - Z3: Dungeon Counters
 - SM: Local Area Maps
 - Mousing over Icons give info (Check/Entrance name, Full Dungeon info)
+- Saving
 
 ## Potential Features:
 - M1 & SM: Logic for all checks
