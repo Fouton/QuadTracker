@@ -13,7 +13,6 @@ For now the code will stay hidden until it is at its released state.
 ## Potential Features:
 - M1 & SM: Logic for all checks
 - Z1 & Z3: Logic for Non ER checks
-- Control + Z to undo mistakes (dont make mistakes)
 
 ## Eventuals if Quad Rando includes them:
 - Z1 Dungeon Room Rando or whatever its called auto map making
