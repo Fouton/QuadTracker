@@ -8,6 +8,7 @@ For now the code will stay hidden until it is at its released state.
 ## Planned Features:
 - Z1: Drag & Dropping onto dungeon maps
 - Z3: Dungeon Counters
+- SM: Local Area Maps
 - Mousing over Icons give info (Check/Entrance name, Full Dungeon info)
 
 ## Potential Features:
