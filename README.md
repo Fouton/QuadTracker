@@ -19,7 +19,6 @@ Latest Release: https://github.com/Fouton/QuadTracker/releases
 ## Eventuals if Quad Rando includes them:
 - Z1 Dungeon Room Rando or whatever its called auto map making
 - Z3 Door Rando (The Nothing Yet tab) & Region Hint Counters
-- SM Map Rando map maker (probably needs autotracking to be possible)
 - All Boss Prize Shuffling (already built into Z3/SM)
 
 ## Autotracking (Eventually) plans:
