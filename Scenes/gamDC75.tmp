@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3u51fyfk7ylr"]
+
+[ext_resource type="Texture2D" uid="uid://d342gx6b5y14g" path="res://Assets/Z1/z1overworld.png" id="1_pgpow"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_wuuct"]
+[ext_resource type="Texture2D" uid="uid://cyl0r1gjvunqe" path="res://Assets/Z3/overworld750.png" id="2_8cwxi"]
+[ext_resource type="Texture2D" uid="uid://sbjuxihsfy6e" path="res://Assets/M1/M1-Zebes.png" id="3_dgqa3"]
+[ext_resource type="Script" path="res://Scripts/Z3 OW.gd" id="4_qysuv"]
+[ext_resource type="Texture2D" uid="uid://ys3ycpcv22ar" path="res://Assets/SM/map_full.png" id="5_u0bx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2era"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_og5cy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4segs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exjkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig2hj"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_wuuct")
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1500.0
+offset_bottom = 30.0
+
+[node name="Z1 OW" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 82.0
+offset_right = 194.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k2era")
+text = "Z1 Overworld"
+
+[node name="M1" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 538.0
+offset_right = 621.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_og5cy")
+text = "Metroid 1"
+
+[node name="Z3 OW" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 782.0
+offset_right = 894.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4segs")
+text = "Z3 Overworld"
+
+[node name="Z3 Dungeon" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 1020.0
+offset_right = 1129.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exjkl")
+text = "Z3 Dungeons"
+
+[node name="Super Metroid" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 1256.0
+offset_right = 1375.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ig2hj")
+text = "Super Metroid"
+
+[node name="Main Section" type="Node" parent="."]
+
+[node name="Z1 OW" type="Node2D" parent="Main Section"]
+visible = false
+
+[node name="OverworldMap" type="Sprite2D" parent="Main Section/Z1 OW"]
+position = Vector2(0, 36)
+scale = Vector2(0.732, 0.732)
+texture = ExtResource("1_pgpow")
+centered = false
+
+[node name="M1" type="Node2D" parent="Main Section"]
+visible = false
+
+[node name="Map" type="Sprite2D" parent="Main Section/M1"]
+position = Vector2(201, 30)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("3_dgqa3")
+centered = false
+
+[node name="Z3 OW" type="Node2D" parent="Main Section"]
+script = ExtResource("4_qysuv")
+
+[node name="OverworldMap" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(0, 30)
+texture = ExtResource("2_8cwxi")
+centered = false
+
+[node name="Z3 DR" type="Node2D" parent="Main Section"]
+visible = false
+
+[node name="SM" type="Node2D" parent="Main Section"]
+visible = false
+
+[node name="Map" type="Sprite2D" parent="Main Section/SM"]
+position = Vector2(201, 30)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("5_u0bx8")
+centered = false
+
+[connection signal="gui_input" from="TopBar" to="TopBar" method="_on_gui_input"]
+[connection signal="pressed" from="TopBar/Z1 OW" to="." method="_on_z_1_ow_pressed"]
+[connection signal="pressed" from="TopBar/M1" to="." method="_on_m_1_pressed"]
+[connection signal="pressed" from="TopBar/Z3 OW" to="." method="_on_z_3_ow_pressed"]
+[connection signal="pressed" from="TopBar/Z3 Dungeon" to="." method="_on_z_3_dungeon_pressed"]
+[connection signal="pressed" from="TopBar/Super Metroid" to="." method="_on_super_metroid_pressed"]

@@ -1,0 +1,610 @@
+[gd_scene load_steps=44 format=3 uid="uid://b3u51fyfk7ylr"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_wuuct"]
+[ext_resource type="Texture2D" uid="uid://cyl0r1gjvunqe" path="res://Assets/Z3/overworld750.png" id="2_8cwxi"]
+[ext_resource type="Script" path="res://Scripts/Z1.gd" id="2_qdbon"]
+[ext_resource type="Texture2D" uid="uid://sbjuxihsfy6e" path="res://Assets/M1/M1-Zebes.png" id="3_dgqa3"]
+[ext_resource type="Texture2D" uid="uid://dt8ua5ajaiq8x" path="res://Assets/Z1/z1ow.png" id="3_elfsc"]
+[ext_resource type="Script" path="res://Scripts/Z3 OW.gd" id="4_qysuv"]
+[ext_resource type="Script" path="res://Scripts/M1.gd" id="4_sxbbu"]
+[ext_resource type="Texture2D" uid="uid://ck1nff82twas8" path="res://Assets/Z1/LeftBanner.png" id="4_y26n3"]
+[ext_resource type="Texture2D" uid="uid://b4lrqk1ylkfg" path="res://Assets/Z1/RightBanner.png" id="5_htx6t"]
+[ext_resource type="Texture2D" uid="uid://ys3ycpcv22ar" path="res://Assets/SM/map_full.png" id="5_u0bx8"]
+[ext_resource type="Texture2D" uid="uid://cynr28rpy4d04" path="res://Assets/Z1/Z1DungeonBorder.png" id="7_gki1u"]
+[ext_resource type="Script" path="res://Scripts/SM.gd" id="8_6gb1o"]
+[ext_resource type="Texture2D" uid="uid://dtb6nsdp5axkm" path="res://Assets/Z1/Z1DungeonBorder2.png" id="8_j353j"]
+[ext_resource type="Texture2D" uid="uid://bxiejbqx1wvjn" path="res://Assets/Z1/Levels/level-1.png" id="9_sxbt8"]
+[ext_resource type="Script" path="res://Scripts/Tracker_Popout.gd" id="10_eeebo"]
+[ext_resource type="Texture2D" uid="uid://bx7m50gnumyor" path="res://Assets/Z1/Levels/level-2.png" id="10_t1kfc"]
+[ext_resource type="Texture2D" uid="uid://dntesbvg0n2ra" path="res://Assets/Z1/Levels/level-3.png" id="11_74hxp"]
+[ext_resource type="Shader" path="res://Assets/FilterMagenta.gdshader" id="11_gea3h"]
+[ext_resource type="Texture2D" uid="uid://cbjedh8hfpwo3" path="res://Assets/Tracker/FullBack.png" id="11_kj74q"]
+[ext_resource type="Texture2D" uid="uid://r81cwd1la24h" path="res://Assets/Z1/Levels/level-4.png" id="12_c3mj8"]
+[ext_resource type="Texture2D" uid="uid://dmxej7e2vaqut" path="res://Assets/Z1/Levels/level-5.png" id="13_xq8e7"]
+[ext_resource type="Texture2D" uid="uid://bgqgngx074v51" path="res://Assets/Z1/Levels/level-6.png" id="14_waepj"]
+[ext_resource type="Texture2D" uid="uid://d2i58ha7rsgyp" path="res://Assets/Z1/Levels/level-7.png" id="15_eo7bd"]
+[ext_resource type="Texture2D" uid="uid://dyydsjob6nl0x" path="res://Assets/Z1/Levels/level-8.png" id="16_dlemx"]
+[ext_resource type="Texture2D" uid="uid://cr77qmr16twqf" path="res://Assets/Z1/Levels/level-9.png" id="17_s5b7e"]
+[ext_resource type="Texture2D" uid="uid://cnfy3fdvl1a6i" path="res://Assets/Z1/Levels/lv9guide.png" id="19_4wgc3"]
+[ext_resource type="Texture2D" uid="uid://bsfl7sxmwf5ya" path="res://Assets/M1/Z3door.png" id="20_b8hm1"]
+[ext_resource type="Texture2D" uid="uid://b0ycu1gnbri0y" path="res://Assets/M1/z3icon.png" id="21_a4bqm"]
+[ext_resource type="Texture2D" uid="uid://jytjru8u8sod" path="res://Assets/Z3/smconnection.png" id="22_vtdcn"]
+[ext_resource type="Texture2D" uid="uid://c8rr0y7i1m4s1" path="res://Assets/Z3/z1connection.png" id="23_2libb"]
+[ext_resource type="Texture2D" uid="uid://kv6rv6o1f3wa" path="res://Assets/Z3/m1connection.png" id="24_eatip"]
+[ext_resource type="Script" path="res://Scripts/AutoTracking.gd" id="26_023tu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjj0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njskv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2era"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_og5cy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4segs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exjkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig2hj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7wub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a0et"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfa8l"]
+shader = ExtResource("11_gea3h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lbdfy"]
+shader = ExtResource("11_gea3h")
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_wuuct")
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1500.0
+offset_bottom = 30.0
+
+[node name="TrackerPopout" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 1433.0
+offset_right = 1500.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vjj0t")
+text = "Tracker"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="TopBar/TrackerPopout"]
+z_index = -1
+layout_mode = 0
+offset_right = 67.0
+offset_bottom = 31.0
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_njskv")
+toggle_mode = false
+button_mask = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="Z1 OW" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 300.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k2era")
+toggle_mode = true
+text = "Zelda 1"
+
+[node name="M1" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 375.0
+offset_right = 575.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_og5cy")
+toggle_mode = true
+text = "Metroid 1"
+
+[node name="Z3 OW" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 650.0
+offset_right = 850.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4segs")
+toggle_mode = true
+text = "Z3 Overworld"
+
+[node name="Z3 Dungeon" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 925.0
+offset_right = 1125.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_exjkl")
+disabled = true
+text = "Nothing Yet"
+
+[node name="Super Metroid" type="Button" parent="TopBar"]
+layout_mode = 0
+offset_left = 1200.0
+offset_right = 1400.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ig2hj")
+toggle_mode = true
+text = "Super Metroid"
+
+[node name="MenuBar" type="MenuBar" parent="TopBar"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 31.0
+
+[node name="Settings" type="PopupMenu" parent="TopBar/MenuBar"]
+position = Vector2i(0, 30)
+size = Vector2i(200, 332)
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+item_count = 15
+item_0/text = "Entrances"
+item_0/id = 0
+item_0/separator = true
+item_1/text = "Zelda 1 ER"
+item_1/checkable = 1
+item_1/id = 1
+item_2/text = "Zelda 3 ER"
+item_2/checkable = 1
+item_2/id = 2
+item_3/text = "Keysanity"
+item_3/id = 3
+item_3/separator = true
+item_4/text = "Zelda 3 Keys"
+item_4/checkable = 1
+item_4/id = 4
+item_5/text = "Super Metroid Keys"
+item_5/checkable = 1
+item_5/id = 5
+item_6/text = "Future Features?"
+item_6/id = 6
+item_6/disabled = true
+item_6/separator = true
+item_7/text = "Z1 Room Shuffle"
+item_7/checkable = 1
+item_7/id = 7
+item_7/disabled = true
+item_8/text = "Z3 Door Rando"
+item_8/checkable = 1
+item_8/id = 8
+item_8/disabled = true
+item_9/text = "SM Map Rando"
+item_9/checkable = 1
+item_9/id = 9
+item_9/disabled = true
+item_10/text = "Prize Shuffle"
+item_10/checkable = 1
+item_10/id = 10
+item_10/disabled = true
+item_11/text = "Autotracking"
+item_11/checkable = 2
+item_11/id = 11
+item_11/disabled = true
+item_12/text = "Other Settings"
+item_12/checkable = 1
+item_12/id = 12
+item_12/disabled = true
+item_12/separator = true
+item_13/text = "Save Window Positions"
+item_13/checkable = 1
+item_13/id = 13
+item_14/text = "Reset Windows"
+item_14/id = 14
+
+[node name="AutoTracking" type="Button" parent="TopBar"]
+visible = false
+layout_mode = 0
+offset_left = 1391.0
+offset_right = 1433.0
+offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s7wub")
+button_mask = 3
+text = "[=.=]"
+
+[node name="Main Section" type="Node" parent="."]
+
+[node name="Z1" type="Node2D" parent="Main Section"]
+visible = false
+script = ExtResource("2_qdbon")
+
+[node name="OverworldMap" type="Sprite2D" parent="Main Section/Z1"]
+self_modulate = Color(0.74558, 0.74558, 0.74558, 1)
+position = Vector2(293, 30)
+texture = ExtResource("3_elfsc")
+centered = false
+
+[node name="EntranceRando" type="Node2D" parent="Main Section/Z1/OverworldMap"]
+visible = false
+
+[node name="Standard" type="Node2D" parent="Main Section/Z1/OverworldMap"]
+
+[node name="Z3 Connection" type="Sprite2D" parent="Main Section/Z1"]
+position = Vector2(782, 344)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_a4bqm")
+
+[node name="Level 1" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 467.0
+offset_right = 85.0
+offset_bottom = 509.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 521.0
+offset_right = 85.0
+offset_bottom = 563.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 2"
+
+[node name="Level 3" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 575.0
+offset_right = 85.0
+offset_bottom = 617.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 3"
+
+[node name="Level 4" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 629.0
+offset_right = 85.0
+offset_bottom = 671.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 4"
+
+[node name="Level 5" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 683.0
+offset_right = 85.0
+offset_bottom = 725.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 5"
+
+[node name="Level 6" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 737.0
+offset_right = 85.0
+offset_bottom = 779.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 6"
+
+[node name="Level 7" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 791.0
+offset_right = 85.0
+offset_bottom = 833.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 7"
+
+[node name="Level 8" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 845.0
+offset_right = 85.0
+offset_bottom = 887.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 8"
+
+[node name="Level 9" type="Button" parent="Main Section/Z1"]
+offset_left = 5.0
+offset_top = 899.0
+offset_right = 85.0
+offset_bottom = 941.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1a0et")
+button_mask = 3
+text = "Level 9"
+
+[node name="LeftBanner" type="Sprite2D" parent="Main Section/Z1"]
+position = Vector2(5, 467)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_y26n3")
+centered = false
+
+[node name="RightBanner" type="Sprite2D" parent="Main Section/Z1"]
+position = Vector2(73, 521)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_htx6t")
+centered = false
+
+[node name="LeftDungeon" type="Sprite2D" parent="Main Section/Z1"]
+material = SubResource("ShaderMaterial_lfa8l")
+position = Vector2(90, 463)
+texture = ExtResource("7_gki1u")
+centered = false
+
+[node name="RightDungeon" type="Sprite2D" parent="Main Section/Z1"]
+material = SubResource("ShaderMaterial_lfa8l")
+position = Vector2(795, 463)
+texture = ExtResource("8_j353j")
+centered = false
+
+[node name="Levels" type="Node2D" parent="Main Section/Z1"]
+
+[node name="Level 1" type="Sprite2D" parent="Main Section/Z1/Levels"]
+position = Vector2(93, 466)
+texture = ExtResource("9_sxbt8")
+centered = false
+
+[node name="Level 2" type="Sprite2D" parent="Main Section/Z1/Levels"]
+position = Vector2(798, 466)
+texture = ExtResource("10_t1kfc")
+centered = false
+
+[node name="Level 3" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("11_74hxp")
+centered = false
+
+[node name="Level 4" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("12_c3mj8")
+centered = false
+
+[node name="Level 5" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("13_xq8e7")
+centered = false
+
+[node name="Level 6" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("14_waepj")
+centered = false
+
+[node name="Level 7" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("15_eo7bd")
+centered = false
+
+[node name="Level 8" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("16_dlemx")
+centered = false
+
+[node name="Level 9" type="Sprite2D" parent="Main Section/Z1/Levels"]
+visible = false
+position = Vector2(93, 466)
+texture = ExtResource("17_s5b7e")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Main Section/Z1/Levels/Level 9"]
+texture = ExtResource("19_4wgc3")
+centered = false
+
+[node name="M1" type="Node2D" parent="Main Section"]
+visible = false
+script = ExtResource("4_sxbbu")
+
+[node name="Map" type="Sprite2D" parent="Main Section/M1"]
+position = Vector2(201, 30)
+texture = ExtResource("3_dgqa3")
+centered = false
+
+[node name="Z3 Door" type="Sprite2D" parent="Main Section/M1"]
+position = Vector2(635.7, 340)
+texture = ExtResource("20_b8hm1")
+centered = false
+
+[node name="Z3 Connection" type="Sprite2D" parent="Main Section/M1"]
+position = Vector2(650, 335)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_a4bqm")
+centered = false
+
+[node name="Z3 OW" type="Node2D" parent="Main Section"]
+script = ExtResource("4_qysuv")
+
+[node name="OverworldMap" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(0, 30)
+texture = ExtResource("2_8cwxi")
+centered = false
+
+[node name="EntranceRando" type="Node2D" parent="Main Section/Z3 OW/OverworldMap"]
+visible = false
+
+[node name="Standard" type="Node2D" parent="Main Section/Z3 OW/OverworldMap"]
+
+[node name="SM-DM" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(400, 150)
+texture = ExtResource("22_vtdcn")
+
+[node name="SM-Hylia" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(486, 632)
+texture = ExtResource("22_vtdcn")
+
+[node name="SM-MireRight" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(833, 633)
+texture = ExtResource("22_vtdcn")
+
+[node name="SM-DarkIceRod" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(1438, 607)
+texture = ExtResource("22_vtdcn")
+
+[node name="Z1-KakFort" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(141, 274)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_2libb")
+
+[node name="M1-LJHouse" type="Sprite2D" parent="Main Section/Z3 OW"]
+position = Vector2(251, 75)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("24_eatip")
+
+[node name="Z3 DR" type="Node2D" parent="Main Section"]
+visible = false
+
+[node name="SM" type="Node2D" parent="Main Section"]
+visible = false
+script = ExtResource("8_6gb1o")
+
+[node name="Map" type="Sprite2D" parent="Main Section/SM"]
+position = Vector2(201, 30)
+texture = ExtResource("5_u0bx8")
+centered = false
+
+[node name="Tracker_Popout" type="Window" parent="."]
+disable_3d = true
+title = "Quad Tracker Popout"
+initial_position = 2
+size = Vector2i(373, 338)
+visible = false
+unresizable = true
+content_scale_mode = 2
+content_scale_aspect = 4
+script = ExtResource("10_eeebo")
+
+[node name="ColorRect" type="ColorRect" parent="Tracker_Popout"]
+offset_right = 373.0
+offset_bottom = 338.0
+mouse_filter = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="Backgrounds" type="Node" parent="Tracker_Popout"]
+
+[node name="QuadBackground" type="Sprite2D" parent="Tracker_Popout/Backgrounds"]
+material = SubResource("ShaderMaterial_lbdfy")
+texture = ExtResource("11_kj74q")
+centered = false
+
+[node name="Z1" type="Node2D" parent="Tracker_Popout"]
+position = Vector2(12, 6)
+
+[node name="M1" type="Node2D" parent="Tracker_Popout"]
+position = Vector2(13, 83)
+
+[node name="Z3" type="Node2D" parent="Tracker_Popout"]
+position = Vector2(13, 126)
+
+[node name="keys" type="Node2D" parent="Tracker_Popout/Z3"]
+
+[node name="nonkeys" type="Node2D" parent="Tracker_Popout/Z3"]
+
+[node name="SM" type="Node2D" parent="Tracker_Popout"]
+position = Vector2(227, 126)
+
+[node name="keys" type="Node2D" parent="Tracker_Popout/SM"]
+
+[node name="nonkeys" type="Node2D" parent="Tracker_Popout/SM"]
+
+[node name="BossBlock" type="Node2D" parent="Tracker_Popout"]
+position = Vector2(227, 301)
+
+[node name="Autotracking" type="Node" parent="."]
+script = ExtResource("26_023tu")
+
+[node name="AutoTracking Settings" type="Window" parent="Autotracking"]
+disable_3d = true
+initial_position = 2
+size = Vector2i(300, 210)
+visible = false
+unresizable = true
+borderless = true
+
+[node name="TitleBar" type="Label" parent="Autotracking/AutoTracking Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 5.0
+offset_right = 83.0
+offset_bottom = 28.0
+grow_horizontal = 2
+text = "Autotracking Settings"
+horizontal_alignment = 1
+
+[node name="Device" type="Label" parent="Autotracking/AutoTracking Settings"]
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 76.0
+offset_bottom = 63.0
+text = "Device:"
+
+[node name="DeviceSelection" type="OptionButton" parent="Autotracking/AutoTracking Settings"]
+offset_left = 20.0
+offset_top = 65.0
+offset_right = 270.0
+offset_bottom = 85.0
+
+[node name="Port Number" type="TextEdit" parent="Autotracking/AutoTracking Settings"]
+offset_left = 65.0
+offset_top = 90.0
+offset_right = 125.0
+offset_bottom = 125.0
+theme_override_colors/background_color = Color(0.165656, 0.165656, 0.165656, 1)
+text = "8080"
+placeholder_text = "Port"
+virtual_keyboard_enabled = false
+
+[node name="Port" type="Label" parent="Autotracking/AutoTracking Settings"]
+offset_left = 20.0
+offset_top = 95.0
+offset_right = 62.0
+offset_bottom = 118.0
+text = "Port: "
+
+[node name="Save&Connect" type="Button" parent="Autotracking/AutoTracking Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 130.0
+offset_right = 64.0
+offset_bottom = 161.0
+grow_horizontal = 2
+text = "Save & Connect"
+
+[node name="Close No Save" type="Button" parent="Autotracking/AutoTracking Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_top = 165.0
+offset_right = 85.5
+offset_bottom = 196.0
+grow_horizontal = 2
+text = "Close Without Saving"
+
+[connection signal="gui_input" from="TopBar" to="TopBar" method="_on_gui_input"]
+[connection signal="gui_input" from="TopBar/TrackerPopout" to="." method="_on_tracker_popout_gui_input"]
+[connection signal="pressed" from="TopBar/TrackerPopout" to="." method="_on_tracker_popout_pressed"]
+[connection signal="color_changed" from="TopBar/TrackerPopout/ColorPickerButton" to="Tracker_Popout" method="_on_color_picker_button_color_changed"]
+[connection signal="gui_input" from="TopBar/Z1 OW" to="." method="_on_z_1_ow_gui_input"]
+[connection signal="pressed" from="TopBar/Z1 OW" to="." method="_on_z_1_ow_pressed"]
+[connection signal="gui_input" from="TopBar/M1" to="." method="_on_m_1_gui_input"]
+[connection signal="pressed" from="TopBar/M1" to="." method="_on_m_1_pressed"]
+[connection signal="gui_input" from="TopBar/Z3 OW" to="." method="_on_z_3_ow_gui_input"]
+[connection signal="pressed" from="TopBar/Z3 OW" to="." method="_on_z_3_ow_pressed"]
+[connection signal="gui_input" from="TopBar/Z3 Dungeon" to="." method="_on_z_3_dungeon_gui_input"]
+[connection signal="pressed" from="TopBar/Z3 Dungeon" to="." method="_on_z_3_dungeon_pressed"]
+[connection signal="gui_input" from="TopBar/Super Metroid" to="." method="_on_super_metroid_gui_input"]
+[connection signal="pressed" from="TopBar/Super Metroid" to="." method="_on_super_metroid_pressed"]
+[connection signal="index_pressed" from="TopBar/MenuBar/Settings" to="." method="_on_settings_index_pressed"]
+[connection signal="gui_input" from="TopBar/AutoTracking" to="." method="_on_auto_tracking_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 1" to="Main Section/Z1" method="_on_level_1_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 2" to="Main Section/Z1" method="_on_level_2_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 3" to="Main Section/Z1" method="_on_level_3_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 4" to="Main Section/Z1" method="_on_level_4_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 5" to="Main Section/Z1" method="_on_level_5_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 6" to="Main Section/Z1" method="_on_level_6_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 7" to="Main Section/Z1" method="_on_level_7_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 8" to="Main Section/Z1" method="_on_level_8_gui_input"]
+[connection signal="gui_input" from="Main Section/Z1/Level 9" to="Main Section/Z1" method="_on_level_9_gui_input"]
+[connection signal="close_requested" from="Tracker_Popout" to="Tracker_Popout" method="_on_close_requested"]
