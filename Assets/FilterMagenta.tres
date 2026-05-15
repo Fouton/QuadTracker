@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cv7tt6ao2ynfk"]
+
+[ext_resource type="Shader" uid="uid://babi6kp6dsddr" path="res://Assets/FilterMagenta.gdshader" id="1_blff2"]
+
+[resource]
+shader = ExtResource("1_blff2")
